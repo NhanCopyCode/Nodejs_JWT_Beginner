@@ -1,4 +1,5 @@
 const express = require("express");
+const { register } = require("../controllers/authController");
 
 const routerAPI = express.Router();
 
@@ -15,5 +16,7 @@ const routerAPI = express.Router();
 routerAPI.get("/", (req, res, next) => {
 	return res.status(200).json("Hello world");
 });
+
+routerAPI.post('/register', register)
 
 module.exports = routerAPI; //export default
