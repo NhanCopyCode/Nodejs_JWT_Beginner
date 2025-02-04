@@ -1,4 +1,4 @@
-const express = require('express');
+const express = require("express");
 
 const routerAPI = express.Router();
 
@@ -7,12 +7,13 @@ const routerAPI = express.Router();
 
 // } = require('../controllers/apiController')
 
-
 // routerAPI.get('/users', getUsersAPI);
 // routerAPI.post('/users', postCreateUserAPI);
 // routerAPI.put('/users', putUpdateUserAPI);
 // routerAPI.delete('/users', deleteUserAPI);
 
-
+routerAPI.get("/", (req, res, next) => {
+	return res.status(200).json("Hello world");
+});
 
 module.exports = routerAPI; //export default
