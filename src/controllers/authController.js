@@ -29,6 +29,7 @@ const handleLogin = async (req, res) => {
 	console.log('data:', data)
 	return res.status(200).json(data);
 };
+
 module.exports = {
 	register,
 	handleLogin,

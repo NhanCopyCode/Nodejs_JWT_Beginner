@@ -44,6 +44,7 @@ const handleLoginService = async (email, password) => {
 					expiresIn: process.env.JWT_EXPIRES,
 				});
 				return {
+					EC: 0,
 					access_token,
 					email: user.email,
 					name: user.name,
