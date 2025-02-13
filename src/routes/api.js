@@ -1,6 +1,6 @@
 const express = require("express");
 const { register, handleLogin } = require("../controllers/authController");
-const { getAllUser } = require("../controllers/userController");
+const { getAllUser, getAccount } = require("../controllers/userController");
 const authJwt = require("../middleware/authJWT");
 const routerAPI = express.Router();
 
@@ -14,5 +14,6 @@ routerAPI.post("/register", register);
 routerAPI.post("/login", handleLogin);
 
 routerAPI.get("/users", getAllUser);
+routerAPI.get("/account", getAccount);
 
 module.exports = routerAPI; //export default

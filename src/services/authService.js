@@ -46,8 +46,7 @@ const handleLoginService = async (email, password) => {
 				return {
 					EC: 0,
 					access_token,
-					email: user.email,
-					name: user.name,
+					user: payload,
 				};
 			}
 		} else {
@@ -56,7 +55,6 @@ const handleLoginService = async (email, password) => {
 				EM: "Email/Password invalid!!",
 			};
 		}
-		
 	} catch (error) {
 		console.log(error);
 		return null;
