@@ -5,7 +5,6 @@ const configViewEngine = require("./config/viewEngine");
 const apiRoutes = require("./routes/api");
 const connection = require("./config/database");
 const { getHomepage } = require("./controllers/homeController");
-const delay = require("./middleware/delay");
 
 const app = express();
 const port = process.env.PORT || 8888;

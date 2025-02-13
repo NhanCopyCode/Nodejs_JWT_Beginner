@@ -5,6 +5,7 @@ const register = async (req, res) => {
 	const { email, name, password } = req.body;
 	//Check email exists
 	const existingUser = await User.findOne({ email }).lean();
+	console.log('existingUser:', existingUser)
 	if (existingUser) {
 		return res.status(409).json({
 			message: "Email already registered!!",
@@ -26,7 +27,6 @@ const handleLogin = async (req, res) => {
 	const { email, password } = req.body;
 
 	const data = await handleLoginService(email, password);
-	console.log('data:', data)
 	return res.status(200).json(data);
 };
 

@@ -1,12 +1,12 @@
 const express = require("express");
 const { register, handleLogin } = require("../controllers/authController");
 const { getAllUser } = require("../controllers/userController");
-const delay = require("../middleware/delay");
+const authJwt = require("../middleware/authJWT");
 const routerAPI = express.Router();
 
-routerAPI.all("*", delay);
+routerAPI.all("*", authJwt);
 
-routerAPI.get("/", delay, (req, res, next) => {
+routerAPI.get("/", authJwt, (req, res, next) => {
 	return res.status(200).json("Hello world");
 });
 

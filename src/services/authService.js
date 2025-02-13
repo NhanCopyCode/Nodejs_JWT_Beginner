@@ -56,15 +56,7 @@ const handleLoginService = async (email, password) => {
 				EM: "Email/Password invalid!!",
 			};
 		}
-		const hashPassword = await bcrypt.hash(password, saltRounds);
-		const result = await User.create({
-			name: name,
-			email: email,
-			password: hashPassword,
-			role: "thanhnhangg",
-		});
-
-		return result;
+		
 	} catch (error) {
 		console.log(error);
 		return null;
